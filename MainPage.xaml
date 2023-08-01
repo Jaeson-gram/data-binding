@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DataBinding.MainPage"
+             xmlns:Models="clr-namespace:DataBinding.Models">
+
+    <ContentPage.Resources>
+        <Models:Person x:Key="person"
+                       Name="Ukelabuchi"
+                       Phone="+2347086561538"
+                       Address="someplace">
+            
+        </Models:Person>
+    </ContentPage.Resources>
+
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="25"
+            Padding="30,0"
+            VerticalOptions="Center">
+
+            <Entry x:Name="textLabel"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"
+                   Text="{Binding Name}"
+                   FontSize="50"/>
+            
+            <!-- DataBinding in xaml-->
+
+            <!--<Label x:Name="secondTextLabel"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"
+                   FontSize="50"
+                   Text="{Binding Name, Source={StaticResource person}}"/>-->
+
+            <Entry HorizontalOptions="Center"
+                   VerticalOptions="Center"
+                   Text="{Binding Phone}"
+                   FontSize="50"/>
+
+            <Entry HorizontalOptions="Center"
+                   VerticalOptions="Center"
+                   Text="{Binding Address}"
+                   FontSize="50"/>
+
+            <!--<Button
+                x:Name="CounterBtn"
+                Text="Bind Name 1"
+                SemanticProperties.Hint="Counts the number of times you click"
+                Clicked="OnCounterClicked"
+                HorizontalOptions="Center" />
+
+            <Button
+                x:Name="CounterBtn2"
+                Text="Bind Name 2"
+                SemanticProperties.Hint="Changes the address the moment you click"
+                Clicked="CounterBtn2_Clicked"
+                HorizontalOptions="Center"/>
+
+
+            <Button
+                x:Name="CounterBtn3"
+                Text="Bind Whole Object"
+                SemanticProperties.Hint="Changes the address the moment you click"
+                HorizontalOptions="Center"
+                Clicked="CounterBtn2_Clicked_1"/>-->
+
+
+            <Button
+                x:Name="inotifyPropChanged"
+                Text="INotifyPropChanged"
+                SemanticProperties.Hint="Changes the object details the moment you click"
+                HorizontalOptions="Center"
+                Clicked="inotifyPropChanged_Clicked"/>
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
